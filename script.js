@@ -1,0 +1,104 @@
+
+let about = document.getElementById("about");
+let getAbout = document.getElementById("getAbout");
+let resume = document.getElementById("resume");
+let getResume = document.getElementById("getResume");
+let works = document.getElementById("works");
+let getWorks = document.getElementById("getWorks");
+let blog = document.getElementById("blog");
+let getBlog = document.getElementById("getBlog");
+let contact = document.getElementById("contact");
+let getContact = document.getElementById("getContact");
+let images =document.querySelectorAll(".works-content img");
+let modals = document.querySelectorAll(".modal");
+let buttonClose=document.querySelectorAll(".close");
+
+
+function remove() {
+    about.classList.remove('view');
+    getAbout.classList.remove('selected');
+    resume.classList.remove('view');
+    getResume.classList.remove('selected');
+    works.classList.remove('view');
+    getWorks.classList.remove('selected');
+    contact.classList.remove('view');
+    getContact.classList.remove('selected');
+ 
+}
+
+getAbout.addEventListener('click', function (e) {
+    if (window.innerWidth > 1040) {
+        e.preventDefault();
+        remove('about');
+        about.classList.add('view');
+        getAbout.classList.add('selected');
+    }
+
+});
+getResume.addEventListener('click', function (e) {
+    if (window.innerWidth > 1040) {
+        e.preventDefault();
+        remove();
+        resume.classList.add('view');
+        getResume.classList.add('selected');
+    }
+})
+getWorks.addEventListener('click', function (e) {
+    if (window.innerWidth > 1040) {
+        e.preventDefault();
+        remove();
+        works.classList.add('view');
+        getWorks.classList.add('selected');
+    }
+})
+
+getContact.addEventListener('click', function (e) {
+    if (window.innerWidth > 1040) {
+        e.preventDefault();
+        remove();
+        contact.classList.add('view');
+        getContact.classList.add('selected');
+    }
+
+})
+
+
+
+
+/**var email = document.getElementById("email");
+var form = document.getElementById("form");
+
+email.addEventListener("input", function (event) {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("I expect an e-mail, darling!");
+  } else {
+    email.setCustomValidity("");
+  }
+});
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+  });**/
+
+  
+console.log(images);
+console.log(modals);
+
+
+  images.forEach(function(button, index) {
+    button.addEventListener('click', function() {
+        modals[index].classList.add("modal-on");
+    });
+  });
+
+
+
+  buttonClose.forEach(function(button, index) {
+    button.addEventListener('click', function() {
+        modals[index].classList.remove("modal-on");
+    });
+  });
+
+
+
+
